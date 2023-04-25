@@ -24,9 +24,7 @@
             curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
             $result = json_decode(curl_exec($ch));
-            foreach ($result->results as $film) {
-                echo "Filme" . $film->title . "<br>";
-            }
+            echo "Filme: ".$result->title. "<br>";
         }
         echo "<br> <hr>";
     }
