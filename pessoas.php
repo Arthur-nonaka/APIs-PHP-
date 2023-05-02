@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>APIs</title>
+    <title>Pessoas</title>
 </head>
 
 <body>
@@ -17,7 +17,16 @@
     $result = json_decode(curl_exec($ch));
     foreach ($result->results as $ator) {
         echo "<h3>Nome: " . $ator->name . "</h3>";
-        echo "genero: " . $ator->gender . "<br>";
+        if($ator->gender == "male" ) {
+            echo "genero: masculino <br>";
+        }
+        if($ator->gender == "female"){
+            echo "genero: feminino <br>";
+        }
+        if($ator->gender == "n/a"){
+            echo "genero: n/a <br>";
+        }
+        echo "Espécie: " . $ator->specie . " <br>";
         echo "Altura: " . $ator->height . " cm <br>";
         foreach ($ator->films as $filmUrl) {
             $ch = curl_init($filmUrl);
