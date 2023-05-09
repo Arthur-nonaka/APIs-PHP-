@@ -11,32 +11,34 @@
 
 <body>
     <div class="container">
-        <a href="naves.php">
+        <a href="naves.php?value=0">
             <div class="menu">
-                Naves
+                <img src="images/starship.jpg"/>
+                <p>Naves</p>
             </div>
         </a>
-        <a href="pessoas.php">
+        <a href="pessoas.php?value=0">
         <div class="menu">
                 Pessoas
             </div>
         </a>
-        <a href="filmes.php">
+        <a href="filmes.php?value=0">
             <div class="menu">
                 Filmes
             </div>
         </a>
-        <a href="planetas.php">
+        <a href="planetas.php?value=0">
             <div class="menu">
                 Planetas
             </div>
         </a>
-        <a href="especies.php">
+        <a href="especies.php?value=0">
             <div class="menu">
-                Espécies
+            <img src="images/species.jpg"/>
+                <p>Espécies</p>
             </div>
         </a>
-        <a href="veiculos.php">
+        <a href="veiculos.php?value=0">
             <div class="menu">
                 Veiculos
             </div>

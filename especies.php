@@ -9,27 +9,39 @@
 </head>
 
 <body>
+
     <?php
-    $url = "https://swapi.dev/api/species/";
-    $ch = curl_init($url);
-    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-    $result = json_decode(curl_exec($ch));
-    foreach ($result->results as $especies) {
-        echo "<h3>" . $especies->name . "</h3>";
-        echo "altura média: " . $especies->average_height . " cm <br>";
-        echo "Lingua: " . $especies->language . " <br>";
-        if ($especies->homeworld == '') {
-            echo "Planeta Natal: n/a <br>";
-        } else {
-            $ch = curl_init($especies->homeworld);
-            curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-            $result = json_decode(curl_exec($ch));
-            echo "Planeta Natal: " . $result->name . " <br>";
+    $value = $_GET['value'];
+    if ($value == 0) {
+
+        $url = "https://swapi.dev/api/species/";
+        $ch = curl_init($url);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        $result = json_decode(curl_exec($ch));
+        foreach ($result->results as $especies) {
+            echo "<a href='?value='><h3>" . $especies->name . "</h3>";
+            echo "altura média: " . $especies->average_height . " cm <br>";
+            echo "Lingua: " . $especies->language . " <br>";
+            if ($especies->homeworld == '') {
+                echo "Planeta Natal: n/a <br>";
+            } else {
+                $ch = curl_init($especies->homeworld);
+                curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+                curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+                $result = json_decode(curl_exec($ch));
+                echo "Planeta Natal: " . $result->name . " <br>";
+            }
+            echo "<br> <hr>";
         }
-        echo "<br> <hr>";
+    } else {
+        $url = "https://swapi.dev/api/species/$value";
+        $ch = curl_init($url);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     }
+
+
     ?>
     <main>
 
