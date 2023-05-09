@@ -51,3 +51,12 @@ img {
 p {
     position: absolute;
 }
+
+.header {
+    position: absolute;
+    display: flex;
+    height: 30%;
+    width: 100%;
+    justify-content: center;
+    top: 0;
+}

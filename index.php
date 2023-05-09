@@ -11,14 +11,17 @@
 
 <body>
     <div class="container">
+        <div class="header">
+            <img src="images/Star_wars2.svg" style="width: auto; height: auto;margin: 10px" />
+        </div>
         <a href="naves.php?value=0">
             <div class="menu">
-                <img src="images/starship.jpg"/>
+                <img src="images/starship.jpg" />
                 <p>Naves</p>
             </div>
         </a>
         <a href="pessoas.php?value=0">
-        <div class="menu">
+            <div class="menu">
                 Pessoas
             </div>
         </a>
@@ -32,9 +35,9 @@
                 Planetas
             </div>
         </a>
-        <a href="especies.php?value=0">
+        <a href="especies">
             <div class="menu">
-            <img src="images/species.jpg"/>
+                <img src="images/species.jpg" />
                 <p>Espécies</p>
             </div>
         </a>
