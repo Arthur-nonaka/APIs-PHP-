@@ -18,23 +18,35 @@
     $result = json_decode(curl_exec($ch));
 
     echo ("
-        <div class='title'> 
-            <h2>$result->name</h2>
-            $result->classification
-        </div>
-        <div class='particao'>
-            <div class='subtitle'>
-                Aparência
+        <div class='header'>
+            <div>
+                <div class='title'> 
+                    $result->name
+                </div>
+                    $result->classification
             </div>
-            <div class='opcoes'>
-                <span>Altura média: $result->average_height</span>
-                <span>Cor de Pele: $result->skin_colors </span>
-                <span>Olhos: $result->eye_colors</span>
+            <div class='logo'>
             </div>
         </div>
-        <div>
-            Designãçao: $result->designation;
-        </div>  
+        <div class='main'>
+            <div class='particao'>
+                <div class='subtitle'>
+                    Informações
+                </div>
+                <hr>    
+                <div class='opcoes'>
+                    <span>Altura média: $result->average_height</span>
+                    <span>Cor de Pele: $result->skin_colors </span>
+                    <span>Olhos: $result->eye_colors</span>
+                </div>
+                <hr>
+                    <span>Designãçao: $result->designation </span>
+            </div>
+            <div class='image'>
+                <img src='../images/$result->name.png'/>
+            </div>
+
+        </div>
         "
     );
     ?>

@@ -4,19 +4,44 @@
 
 body {
     background-image: url(images/stars.png);
-    margin: 10px;
+    margin: 0px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    padding: 20px;
 }
 
 .title {
+    font-size: 2rem;
+}
+
+.logo {
+    background-image: url(images/logo.png);
+    width: 395px;
+    height: 60px;
+}
+
+.main {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
 
 }
 
 .particao {
+    margin: 5px;
     display: flex;
     flex-direction: column;
-    padding: 20px;
-    background-color: rgb(27, 9, 23);
-    width: 40%;
+    padding: 15px;
+    background-color: rgba(27, 9, 23, 0.678);
+    border: solid 1px rgb(241, 241, 84);
+    border-radius: 25px;
+    width: 50%;
 }
 
 .subtitle {
@@ -29,6 +54,14 @@ body {
     flex-direction: column;
 }
 span {
-    margin: 2px;
-    padding: 1px;
+    padding: 4px;
+}
+img {
+    height: 80vh;
+}
+.image {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
