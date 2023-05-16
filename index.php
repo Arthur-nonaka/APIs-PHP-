@@ -12,7 +12,7 @@
 <body>
     <div class="container">
         <div class="header">
-            <img src="images/Star_wars2.svg" style="width: auto; height: auto;margin: 10px" />
+            <img src="images/Star_wars2.svg" style="width: auto; height: 140px;margin: 10px" /> 
         </div>
         <a href="naves.php?value=0">
             <div class="menu">
