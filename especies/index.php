@@ -10,16 +10,27 @@
 </head>
 
 <body>
+    <div class="header" style="display: flex; justify-content: center; align-items: center">
+        <a href='../'>
+            <div class='logo'>
+            </div>
+        </a>
+    </div>
+    <div class="reparticao">
 
-    <?php
-        $url = "https://swapi.dev/api/species/";
+        <?php
+        $page = $_GET['page'];
+
+        $url = "https://swapi.dev/api/species/?page=$page";
         $ch = curl_init($url);
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         $result = json_decode(curl_exec($ch));
+        $number = 1;
         foreach ($result->results as $especies) {
-            $number = substr($especies->url, -2, 1);
-            echo "<a href=species.php?value=$number><h3>" . $especies->name . "</h3></a>";
+            echo "<div class='particao' style='margin: 20px;width: 30%'>";
+            echo "<a href=species.php?value=" . $number + ($page * 10) - 10 . ">";
+            echo $especies->name . "<br> <hr>";
             echo "altura média: " . $especies->average_height . " cm <br>";
             echo "Lingua: " . $especies->language . " <br>";
             if ($especies->homeworld == '') {
@@ -29,15 +40,29 @@
                 curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
                 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
                 $result = json_decode(curl_exec($ch));
-                echo "Planeta Natal: " . $result->name . " <br>";
+                echo "Planeta Natal: $result->name";
             }
-            echo "<br> <hr>";
+            echo "</a>";
+            echo "</div>";
+            $number = $number + 1;
         }
-    ?>
-    <main>
 
+        ?>
+    </div>
+    <div class="pageButton">
+        <?php
+        if ($page != 1) {
+            echo "<a href=?page=" . $page - 1 . ">";
+            echo "<button> < </button>";
+            echo "</a>";
+        }
+        echo $page;
+        echo "<a href=?page=" . $page + 1 . ">";
+        echo "<button> > </button>";
+        echo "</a>";
+        ?>
+    </div>
 
-    </main>
 </body>
 
 </html>

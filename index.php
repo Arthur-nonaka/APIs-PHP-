@@ -10,40 +10,38 @@
 </head>
 
 <body>
+    <div class="header">
+        <img src="images/Star_wars2.svg" style="width: auto; height: 140px;margin: 10px" />
+    </div>
     <div class="container">
-        <div class="header">
-            <img src="images/Star_wars2.svg" style="width: auto; height: 140px;margin: 10px" /> 
-        </div>
         <a href="naves.php?value=0">
             <div class="menu">
                 <img src="images/starship.jpg" />
-                <p>Naves</p>
             </div>
         </a>
         <a href="pessoas.php?value=0">
             <div class="menu">
-                Pessoas
+                <img src="images/people.png" />
             </div>
         </a>
         <a href="filmes.php?value=0">
             <div class="menu">
-                Filmes
+                <img src="images/films.png" />
             </div>
         </a>
         <a href="planetas.php?value=0">
             <div class="menu">
-                Planetas
+                <img src="images/planets.png" />
             </div>
         </a>
-        <a href="especies">
+        <a href="especies?page=1">
             <div class="menu">
                 <img src="images/species.jpg" />
-                <p>Espécies</p>
             </div>
         </a>
         <a href="veiculos.php?value=0">
             <div class="menu">
-                Veiculos
+                <img src="images/vehicles.png" />
             </div>
         </a>
     </div>

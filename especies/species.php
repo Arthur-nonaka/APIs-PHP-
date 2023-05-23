@@ -17,37 +17,42 @@
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     $result = json_decode(curl_exec($ch));
 
-    echo ("
-        <div class='header'>
+    echo ('
+        <div class="header">
             <div>
-                <div class='title'> 
-                    $result->name
+                <div class="title"> 
+                    ' . $result->name . '
                 </div>
-                    $result->classification
+                    ' . $result->classification . '
             </div>
-            <div class='logo'>
+            <a href="../">
+            <div class="logo">
+            </div>
+            </a>
+            <div>
+             A
             </div>
         </div>
-        <div class='main'>
-            <div class='particao'>
-                <div class='subtitle'>
+        <div class="main">
+            <div class="particao">
+                <div class="subtitle">
                     Informações
                 </div>
                 <hr>    
-                <div class='opcoes'>
-                    <span>Altura média: $result->average_height</span>
-                    <span>Cor de Pele: $result->skin_colors </span>
-                    <span>Olhos: $result->eye_colors</span>
+                <div class="opcoes">
+                    <span>Altura média: ' . $result->average_height . '</span>
+                    <span>Cor de Pele: ' . $result->skin_colors . ' </span>
+                    <span>Olhos: ' . $result->eye_colors . '</span>
                 </div>
                 <hr>
-                    <span>Designãçao: $result->designation </span>
+                    <span>Designãçao: ' . $result->designation . ' </span>
             </div>
-            <div class='image'>
-                <img src='../images/$result->name.png'/>
+            <div class="image">
+                <img src="../images/'.$result->name.'.png">
             </div>
 
         </div>
-        "
+        '
     );
     ?>
 </body>
