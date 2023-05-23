@@ -57,9 +57,11 @@
             echo "</a>";
         }
         echo $page;
-        echo "<a href=?page=" . $page + 1 . ">";
-        echo "<button> > </button>";
-        echo "</a>";
+        if ($page != 4) {
+            echo "<a href=?page=" . $page + 1 . ">";
+            echo "<button> > </button>";
+            echo "</a>";
+        }
         ?>
     </div>
 
