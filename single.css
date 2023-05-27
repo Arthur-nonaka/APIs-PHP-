@@ -40,6 +40,8 @@ a {
 button {
     background-color: black;
     color: yellow;
+    box-shadow: none;
+    border: none;
 }
 
 button:hover {

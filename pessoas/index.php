@@ -41,13 +41,6 @@
                 echo "genero: n/a <br>";
             }
             echo "Altura: " . $ator->height . " cm <br>";
-            // foreach ($ator->films as $filmUrl) {
-            //     $ch = curl_init($filmUrl);
-            //     curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-            //     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-            //     $result = json_decode(curl_exec($ch));
-            //     echo "Filme: " . $result->title . "<br>";
-            // }
             echo "</a> </div>";
             $number = $number + 1;
         }

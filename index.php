@@ -14,7 +14,7 @@
         <img src="images/Star_wars2.svg" style="width: auto; height: 140px;margin: 10px" />
     </div>
     <div class="container">
-        <a href="naves.php?page=1">
+        <a href="naves?page=1">
             <div class="menu">
                 <img src="images/starship.jpg" />
             </div>
@@ -24,12 +24,12 @@
                 <img src="images/people.png" />
             </div>
         </a>
-        <a href="filmes.php?page=1">
+        <a href="filmes?page=1">
             <div class="menu">
                 <img src="images/films.png" />
             </div>
         </a>
-        <a href="planetas.php?page=1">
+        <a href="planetas?page=1">
             <div class="menu">
                 <img src="images/planets.png" />
             </div>
@@ -39,7 +39,7 @@
                 <img src="images/species.jpg" />
             </div>
         </a>
-        <a href="veiculos.php?page=1">
+        <a href="veiculos?page=1">
             <div class="menu">
                 <img src="images/vehicles.png" />
             </div>
