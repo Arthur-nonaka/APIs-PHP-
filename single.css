@@ -107,3 +107,9 @@ img {
     align-items: center;
     justify-content: center;
 }
+
+.film-image {
+    position: relative;
+    width: 15vw;
+    height: 35vh;
+}

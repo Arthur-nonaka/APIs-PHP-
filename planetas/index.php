@@ -26,15 +26,13 @@
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         $result = json_decode(curl_exec($ch));
-        $number = 1;
         foreach ($result->results as $planet) {
             echo "<div class='particao' style='margin: 20px;width: 30%'>";
-            echo "<a href=planetas.php?value=" . $number + ($page * 10) - 10 . ">";
+            echo "<a href=planetas.php?value=" . $planet->url. ">";
             echo $planet->name . "<br> <hr>";
             echo "População: " . $planet->population . "<br>";
             echo "Gravidade: " . $planet->gravity;
             echo "</a> </div>";
-            $number = $number + 1;
         }
         ?>
     </div>

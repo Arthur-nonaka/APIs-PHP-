@@ -26,10 +26,9 @@
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         $result = json_decode(curl_exec($ch));
-        $number = 1;
         foreach ($result->results as $ator) {
             echo "<div class='particao' style='margin: 20px;width: 30%'>";
-            echo "<a href=pessoas.php?value=" . $number + ($page * 10) - 10 . ">";
+            echo "<a href=pessoas.php?value=" . $ator->url. ">";
             echo $ator->name . "<br> <hr>";
             if ($ator->gender == "male") {
                 echo "genero: masculino <br>";
@@ -42,7 +41,6 @@
             }
             echo "Altura: " . $ator->height . " cm <br>";
             echo "</a> </div>";
-            $number = $number + 1;
         }
         ?>
     </div>

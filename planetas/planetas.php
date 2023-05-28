@@ -12,7 +12,7 @@
 <body>
     <?php
     $x = $_GET['value'];
-    $ch = curl_init("https://swapi.dev/api/planets/$x");
+    $ch = curl_init("$x");
     curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     $result = json_decode(curl_exec($ch));
@@ -52,13 +52,13 @@
                 </div>
                 <hr> ');
 
-    echo '<span> Residents: </span>';
+    echo '<span> Residentes: </span>';
     foreach ($result->residents as $resident) {
         $ch = curl_init($resident);
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         $people = json_decode(curl_exec($ch));
-        echo $people->name . '<br>';
+        echo '<a href="../pessoas/pessoas.php?value=' . $people->url . '">' . $people->name . '</a><br>';
     }
     ;
     echo '<hr><span> Filmes: </span>';
@@ -67,7 +67,7 @@
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         $film = json_decode(curl_exec($ch));
-        echo $film->title . '<br>';
+        echo '<a href="../filmes/filmes.php?value=' . $film->url . '">' . $film->title . '</a><br>';
     }
     ;
 

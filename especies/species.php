@@ -12,7 +12,7 @@
 <body>
     <?php
     $x = $_GET['value'];
-    $ch = curl_init("https://swapi.dev/api/species/$x");
+    $ch = curl_init("$x");
     curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     $result = json_decode(curl_exec($ch));
@@ -54,7 +54,7 @@
     curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     $planet = json_decode(curl_exec($ch));
-    echo $planet->name . '</span>';
+    echo '<a href="../planetas/planetas.php?value=' . $planet->url . '">' . $planet->name . '</a></span>';
     echo ('
                     <span>Designãçao: ' . $result->designation . ' </span>
                     <span>Lingua: ' . $result->language . '</span>
@@ -66,16 +66,18 @@
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         $people = json_decode(curl_exec($ch));
-        echo $people->name . '<br>';
-    };
+        echo '<a href="../pessoas/pessoas.php?value=' . $people->url . '">' . $people->name . '</a><br>';
+    }
+    ;
     echo '<hr><span> Filmes: </span>';
     foreach ($result->films as $film) {
         $ch = curl_init($film);
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         $film = json_decode(curl_exec($ch));
-        echo $film->title . '<br>';
-    };
+        echo '<a href="../filmes/filmes.php?value=' . $film->url . '">' . $film->title . '</a><br>';
+    }
+    ;
 
     echo ('</div>
             <div class="image">

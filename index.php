@@ -24,7 +24,7 @@
                 <img src="images/people.png" />
             </div>
         </a>
-        <a href="filmes?page=1">
+        <a href="filmes">
             <div class="menu">
                 <img src="images/films.png" />
             </div>

@@ -26,10 +26,9 @@
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         $result = json_decode(curl_exec($ch));
-        $number = 1;
         foreach ($result->results as $especies) {
             echo "<div class='particao' style='margin: 20px;width: 30%'>";
-            echo "<a href=species.php?value=" . $number + ($page * 10) - 10 . ">";
+            echo "<a href=species.php?value=" . $especies->url. ">";
             echo $especies->name . "<br> <hr>";
             echo "altura média: " . $especies->average_height . " cm <br>";
             echo "Lingua: " . $especies->language . " <br>";
@@ -44,7 +43,6 @@
             }
             echo "</a>";
             echo "</div>";
-            $number = $number + 1;
         }
 
         ?>

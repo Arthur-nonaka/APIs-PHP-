@@ -12,7 +12,7 @@
 <body>
     <?php
     $x = $_GET['value'];
-    $ch = curl_init("https://swapi.dev/api/people/$x");
+    $ch = curl_init("$x");
     curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     $result = json_decode(curl_exec($ch));
@@ -56,7 +56,7 @@
     curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     $planet = json_decode(curl_exec($ch));
-    echo $planet->name . '</span>';
+    echo '<a href="../planetas/planetas.php?value=' . $planet->url . '">' . $planet->name . '</a></span>';
 
     echo '<span> Espécie: ';
     if ($result->species != []) {
@@ -64,9 +64,9 @@
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         $specie = json_decode(curl_exec($ch));
-        echo $specie->name . '</span>';
+        echo '<a href="../especies/species.php?value=' . $specie->url . '">' . $specie->name . '</a></span>';
     } else {
-        echo "Human </span>";
+        echo "<a href='../especies/species.php?value=https://swapi.dev/api/species/1/'> Human </a></span>";
     }
     echo "<hr>";
     echo '<span> Naves: </span>';
@@ -76,8 +76,9 @@
             curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
             $starship = json_decode(curl_exec($ch));
-            echo $starship->name . '<br>';
-        };
+            echo '<a href="../naves/naves.php?value=' . $starship->url . '">' . $starship->name . '</a><br>';
+        }
+        ;
     } else {
         echo "N/A </span>";
     }
@@ -89,8 +90,9 @@
             curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
             $vehicle = json_decode(curl_exec($ch));
-            echo $vehicle->name . '<br>';
-        };
+            echo '<a href="../veiculos/veiculos.php?value=' . $vehicle->url . '">' . $vehicle->name . '</a><br>';
+        }
+        ;
     } else {
         echo "N/A </span>";
     }
@@ -102,8 +104,9 @@
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         $film = json_decode(curl_exec($ch));
-        echo $film->title . '<br>';
-    };
+        echo '<a href="../filmes/filmes.php?value=' . $film->url . '">' . $film->title . '</a><br>';
+    }
+    ;
 
     echo ('</div>
             <div class="image">
