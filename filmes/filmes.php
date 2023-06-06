@@ -85,7 +85,7 @@
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         $vehicle = json_decode(curl_exec($ch));
-        echo '<a href="../veiculos/veiculos?value=' . $vehicle->url . '">' . $vehicle->name . '</a><br>';
+        echo '<a href="../veiculos/veiculos.php?value=' . $vehicle->url . '">' . $vehicle->name . '</a><br>';
     }
     ;
 
@@ -95,7 +95,7 @@
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         $specie = json_decode(curl_exec($ch));
-        echo '<a href="../especies/species?value=' . $specie->url . '">' . $specie->name . '</a><br>';
+        echo '<a href="../especies/species.php?value=' . $specie->url . '">' . $specie->name . '</a><br>';
     }
     ;
 
